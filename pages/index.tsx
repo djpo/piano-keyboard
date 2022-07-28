@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.testBox}>
-          <Piano />
+          <Piano firstNote={21} lastNote={32} />
         </div>
       </main>
     </div>

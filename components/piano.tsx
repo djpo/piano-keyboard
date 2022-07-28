@@ -1,21 +1,24 @@
 import { Key } from './key';
 import styles from '../styles/Piano.module.css';
 
-const Piano = () => {
+interface Props {
+  firstNote: number,
+  lastNote: number,
+}
+
+const generateKeys = (firstNote: number, lastNote: number): JSX.Element[] => {
+  const keys = [];
+  for (let i = firstNote; i < lastNote + 1; i++) {
+    keys.push(<Key midiNote={i} key={i.toString()} />);
+  }
+  return keys;
+}
+
+const Piano = ({ firstNote, lastNote }: Props) => {
+
   return (
     <div className={styles.piano}>
-      <Key midiNote={21} />
-      <Key midiNote={22} />
-      <Key midiNote={23} />
-      <Key midiNote={24} />
-      <Key midiNote={25} />
-      <Key midiNote={26} />
-      <Key midiNote={27} />
-      <Key midiNote={28} />
-      <Key midiNote={29} />
-      <Key midiNote={30} />
-      <Key midiNote={31} />
-      <Key midiNote={32} />
+      {generateKeys(firstNote, lastNote)}
     </div>
   );
 }

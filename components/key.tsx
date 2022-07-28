@@ -1,7 +1,13 @@
 import styles from '../styles/Key.module.css';
 
-const Key = () => (
-  <div className={styles.key} />
+interface Props {
+  midiNote: number,
+}
+
+const Key = ({ midiNote }: Props) => (
+  <div className={styles.key}>
+    {midiNote}
+  </div>
 )
 
 export { Key };
