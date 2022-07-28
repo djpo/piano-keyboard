@@ -1,0 +1,6 @@
+.key {
+  min-height: 8rem;
+  min-width: 2rem;
+  border: 2px solid purple;
+  background: pink;
+}
