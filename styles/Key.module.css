@@ -1,9 +1,18 @@
-.key {
+.blackKey, .whiteKey {
+  margin: 0.2rem;
   min-height: 8rem;
   min-width: 2rem;
-  border: 2px solid purple;
-  background: pink;
   display: flex;
   flex-direction: column-reverse;
+
+}
+
+.blackKey {
+  background: purple;
+  color: pink;
+}
+
+.whiteKey {
+  background: pink;
   color: purple;
 }
