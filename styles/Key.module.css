@@ -1,10 +1,10 @@
-.blackKey, .whiteKey {
+.blackKey,
+.whiteKey {
   margin: 0.2rem;
   min-height: 8rem;
   min-width: 2rem;
   display: flex;
   flex-direction: column-reverse;
-
 }
 
 .blackKey {

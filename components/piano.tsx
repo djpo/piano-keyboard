@@ -1,9 +1,9 @@
-import { Key } from './key';
-import styles from '../styles/Piano.module.css';
+import { Key } from "./key";
+import styles from "../styles/Piano.module.css";
 
 interface Props {
-  firstNote: number,
-  lastNote: number,
+  firstNote: number;
+  lastNote: number;
 }
 
 const generateKeys = (firstNote: number, lastNote: number): JSX.Element[] => {
@@ -12,15 +12,12 @@ const generateKeys = (firstNote: number, lastNote: number): JSX.Element[] => {
     keys.push(<Key midiNote={i} key={i.toString()} />);
   }
   return keys;
-}
+};
 
 const Piano = ({ firstNote, lastNote }: Props) => {
-
   return (
-    <div className={styles.piano}>
-      {generateKeys(firstNote, lastNote)}
-    </div>
+    <div className={styles.piano}>{generateKeys(firstNote, lastNote)}</div>
   );
-}
+};
 
 export { Piano };
