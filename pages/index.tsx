@@ -4,9 +4,8 @@ import { Piano } from "../components/piano";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const onPianoEvent = (e: any): void => {
-    console.log("onPianoEvent");
-    console.log(e);
+  const onPianoEvent = (midiNote: number): void => {
+    console.log(`pressed midi note: ${midiNote.toString()}`);
   };
 
   return (
