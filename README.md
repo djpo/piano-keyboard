@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Screenshot
+
+<img width="557" alt="piano-keyboard" src="https://user-images.githubusercontent.com/15165864/182222765-594e20a7-4ef9-4920-be79-8b84aba7a5d7.png">
 
 ## Instructions to run
 
