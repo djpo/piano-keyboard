@@ -4,8 +4,8 @@ import { Piano } from "../components/piano";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const onPianoEvent = (midiNote: number): void => {
-    console.log(`pressed: ${midiNote.toString()}`);
+  const onPianoEvent = (keyName: string): void => {
+    console.log(`pressed: ${keyName}`);
   };
 
   return (
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.testBox}>
-          <Piano fromKey={21} toKey={32} onEvent={onPianoEvent} />
+          <Piano fromKey={36} toKey={52} onEvent={onPianoEvent} />
         </div>
       </main>
     </div>

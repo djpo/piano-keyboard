@@ -1,4 +1,7 @@
-/* midi note reference
+const getKeyDetails = (
+  midiNote: number
+): { name: string; octave: number; color: string } => {
+  /* midi note reference
   0: C-2
   9: A-1
   21: A0 (lowest physical piano note)
@@ -6,7 +9,6 @@
   127: G9
 */
 
-const getKeyDetails = (midiNote: number): { name: string; color: string } => {
   const baseNoteDetails = [
     { name: "C", color: "white" },
     { name: "Db", color: "black" },
@@ -24,7 +26,13 @@ const getKeyDetails = (midiNote: number): { name: string; color: string } => {
 
   const noteToBaseNote = (midiNote: number): number => midiNote % 12;
 
-  return baseNoteDetails[noteToBaseNote(midiNote)];
+  const noteToOctave = (midiNote: number): number =>
+    Math.floor((midiNote + 3) / 12) - 2;
+
+  return {
+    octave: noteToOctave(midiNote),
+    ...baseNoteDetails[noteToBaseNote(midiNote)],
+  };
 };
 
 export { getKeyDetails };

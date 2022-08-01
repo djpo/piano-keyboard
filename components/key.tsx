@@ -8,15 +8,17 @@ interface Props {
 
 const Key = ({ midiNote, handleClick }: Props) => {
   const keyDetails = getKeyDetails(midiNote);
+  const keyFullName = `${keyDetails.name}${keyDetails.octave}`;
+  const keyPressFeedback = `${midiNote} (${keyFullName})`;
 
   return (
     <button
       className={
         keyDetails.color === "black" ? styles.blackKey : styles.whiteKey
       }
-      onClick={() => handleClick(`${midiNote} (${keyDetails.name})`)}
+      onClick={() => handleClick(keyPressFeedback)}
     >
-      {midiNote}
+      {keyFullName}
     </button>
   );
 };

@@ -4,13 +4,13 @@ import styles from "../styles/Piano.module.css";
 interface Props {
   fromKey: number;
   toKey: number;
-  onEvent: (midiNote: number) => void;
+  onEvent: (keyName: string) => void;
 }
 
 const generateKeys = (
   firstKey: number,
   lastKey: number,
-  onEvent: (midiNote: number) => void
+  onEvent: (keyName: string) => void
 ): JSX.Element[] => {
   const keys = [];
   for (let i = firstKey; i < lastKey + 1; i++) {
