@@ -1,21 +1,24 @@
+import { getKeyDetails } from "../util/keyDetails";
 import styles from "../styles/Key.module.css";
 
 interface Props {
   midiNote: number;
-  handleClick: (midiNote: number) => void;
+  handleClick: (keyName: string) => void;
 }
 
-const blackNotes = [22, 25, 27, 30, 32];
+const Key = ({ midiNote, handleClick }: Props) => {
+  const keyDetails = getKeyDetails(midiNote);
 
-const Key = ({ midiNote, handleClick }: Props) => (
-  <button
-    className={
-      blackNotes.includes(midiNote) ? styles.blackKey : styles.whiteKey
-    }
-    onClick={() => handleClick(midiNote)}
-  >
-    {midiNote}
-  </button>
-);
+  return (
+    <button
+      className={
+        keyDetails.color === "black" ? styles.blackKey : styles.whiteKey
+      }
+      onClick={() => handleClick(`${midiNote} (${keyDetails.name})`)}
+    >
+      {midiNote}
+    </button>
+  );
+};
 
 export { Key };

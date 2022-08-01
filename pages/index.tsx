@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const onPianoEvent = (midiNote: number): void => {
-    console.log(`pressed midi note: ${midiNote.toString()}`);
+    console.log(`pressed: ${midiNote.toString()}`);
   };
 
   return (
